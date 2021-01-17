@@ -1,0 +1,32 @@
+//
+//  main.swift
+//  TestSwift
+//
+//  Created by 泡泡 on 2021/1/17.
+//
+
+import Foundation
+
+print("Hello, World!")
+
+func test() {
+    print("hello")
+    print("hello")
+}
+test()
+
+
+//class Person {
+//    func test() {
+//
+//    }
+//}
+//class Doctor: Person {
+//    override func test() {
+//
+//    }
+//}
+//
+//var doc: Person = Doctor()
+////doc = Person()
+//doc.test()
