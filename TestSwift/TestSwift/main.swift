@@ -9,11 +9,11 @@ import Foundation
 
 print("Hello, World!")
 
-func test() {
-    print("hello")
-    print("hello")
-}
-test()
+//func test() {
+//    print("hello")
+//    print("hello")
+//}
+//test()
 
 
 //class Person {
@@ -30,3 +30,9 @@ test()
 //var doc: Person = Doctor()
 ////doc = Person()
 //doc.test()
+
+
+var num1: Int? = nil
+var num2: Int?? = num1
+var num3: Int?? = nil
+print(num2 == num3)

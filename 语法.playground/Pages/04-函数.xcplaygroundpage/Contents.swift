@@ -145,15 +145,108 @@
 //func sum(v1: Int, v2: Int) -> Int {
 //    v1 + v2
 //}
-func sum(_ v1: Int, _ v2: Int) -> Int {
-    v1 + v2
-}
-func sum(_ numbers: Int...) -> Int {
-    var total = 0
-    for number in numbers {
-        total += number
-    }
-    return total
-}
-// error: Ambiguous use of 'sum'
-sum(10, 20)
+//func sum(_ v1: Int, _ v2: Int) -> Int {
+//    v1 + v2
+//}
+//func sum(_ numbers: Int...) -> Int {
+//    var total = 0
+//    for number in numbers {
+//        total += number
+//    }
+//    return total
+//}
+//// error: Ambiguous use of 'sum'
+//sum(10, 20)
+
+// 内联函数
+/*
+ 如果开启了编译器优化（Release模式默认会开启优化），编译器会自动将某些函数编程内联函数。
+ 将函数调用展开成函数体。
+ 
+ 不会内联的函数：
+ 1.函数体较长
+ 2.包含递归
+ 3.包含动态派发
+ */
+//func test() {
+//    print(11111)
+//}
+//test() // buildsetting optimization
+
+// @inline，不会被内联，即便开启了编译器优化
+//@inline(never) func test() {
+//    print("test")
+//}
+// @inline，开启编译器优化后，即使代码很长，也会被内联（递归调用函数，动态派发的函数 除外）
+//@inline(__always) func test() {
+//    print("test")
+//}
+
+// 函数类型
+//func test() {
+//    print("test")
+//}
+//func sum(v1: Int, v2: Int) -> Int {
+//    v1 + v2
+//}
+//var fn: (Int, Int) -> Int = sum
+//fn(2, 3) // 调用时不需要参数标签
+
+// 函数类型 作为 函数参数
+//func sum(v1: Int, v2: Int) -> Int {
+//    v1 + v2
+//}
+//func diff(v1: Int, v2: Int) -> Int {
+//    v1 - v2
+//}
+//func printResult(_ mathFn: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+//    print("Result: \(mathFn(a, b))")
+//}
+//printResult(sum, 5, 2)
+//printResult(diff, 5, 2)
+
+// 函数还可以作为属性
+
+// 函数作为返回值
+//func next(_ input: Int) -> Int {
+//    input + 1
+//}
+//func previous(_ input: Int) -> Int {
+//    input - 1
+//}
+//func forward(_ forward: Bool) -> (Int) -> Int {
+//    forward ? next : previous
+//}
+//forward(true)(3)
+//forward(false)(3)
+
+// 返回值是函数类型的函数，叫 高阶函数
+
+// typealias 用来给类型起别名
+//typealias Short = Int16
+
+//typealias Date = (year: Int, month: Int, day: Int)
+//func test(_ date: Date) {
+//    print(date.0)
+//    print(date.month)
+//    print(date.day)
+//}
+//test((2021, 01, 18))
+
+// Void 就是空元组
+//Void
+//func test() -> Void { }
+//func test1() { }
+
+// 嵌套函数
+//func forward(_ forward: Bool) -> (Int) -> Int {
+//    func next(_ input: Int) -> Int {
+//        input + 1
+//    }
+//    func previous(_ input: Int) -> Int {
+//        input - 1
+//    }
+//    return forward ? next : previous
+//}
+//forward(true)(3)
+//forward(false)(3)
