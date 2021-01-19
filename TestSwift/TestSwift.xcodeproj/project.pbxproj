@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC815FF225B48D5E00674B21 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC815FF125B48D5E00674B21 /* main.swift */; };
+		AC81600425B7127A00674B21 /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC81600325B7127A00674B21 /* Mems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		AC815FEE25B48D5E00674B21 /* TestSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC815FF125B48D5E00674B21 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AC81600325B7127A00674B21 /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				AC815FF125B48D5E00674B21 /* main.swift */,
+				AC81600325B7127A00674B21 /* Mems.swift */,
 			);
 			path = TestSwift;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC815FF225B48D5E00674B21 /* main.swift in Sources */,
+				AC81600425B7127A00674B21 /* Mems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +250,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
