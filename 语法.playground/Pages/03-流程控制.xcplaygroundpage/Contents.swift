@@ -9,7 +9,7 @@
 
 //var num = 5
 //while num > 0 {
-//    // num-- // --不让用了。。
+//    //num-- // --不让用了。。
 //    num -= 1
 //    print("num is \(num)")
 //}
@@ -19,11 +19,11 @@
 //
 //} while num > 0 // 相当于do-while
 
-//let names = ["a", "s", "d", "f"]
+let names = ["a", "s", "d", "f"]
 //for i in 0...3 {
 //    print(names[i])
 //}
-//
+
 //let range = 1...3
 //for i in range {
 //    print(names[i])
@@ -43,13 +43,13 @@
 //for var i in 1...3 {
 //    i += 5
 //    print(i)
-//} // 6 7 8
+//}
 //
 //for name in names[0...3] {
 //    print(name)
 //}
 
-// 半开区间 1..<b , 没有<..
+// 半开区间 1..<b , 没有左开的
 
 // 单侧区间，让区间朝一个方向尽可能的远
 //for name in names[1...] {
@@ -68,9 +68,9 @@
 //range.contains(1)
 //range.contains(-2)
 
-//ClosedRange ...
-//Range   1..<3
-//PartialRangeThrough ...5
+//ClosedRange 开区间
+//Range 半开区间
+//PartialRangeThrough 单侧区间
 
 // 字符、字符串 也能使用区间运算符，但默认不能用在for-in中
 //let stringRange = "cc"..."ff"
@@ -199,17 +199,17 @@
 //print(sum)
 
 // 标签语句
-outer: for i in 1...4 {
-    for k in 1...4 {
-        if k == 3 {
-            continue outer
-        }
-        if i == 3 {
-            break outer
-        }
-        print("i == \(i), k == \(k)")
-    }
-}
+//outer: for i in 1...4 {
+//    for k in 1...4 {
+//        if k == 3 {
+//            continue outer
+//        }
+//        if i == 3 {
+//            break outer
+//        }
+//        print("i == \(i), k == \(k)")
+//    }
+//}
 
 
 //: [Next](@next)

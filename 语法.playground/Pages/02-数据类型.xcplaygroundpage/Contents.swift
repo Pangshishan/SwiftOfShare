@@ -90,11 +90,11 @@ print(年龄_😀)
 //http200Status.statusCode
 //http200Status.description
 
-//let http404Error = (404, "not found")
-//
-//let (statusCode, statusMsg) = http404Error
-//
-//let (justCode, _) = http404Error;
+let http404Error = (404, "not found")
+
+let (statusCode, statusMsg) = http404Error
+
+let (justCode, _) = http404Error;
 
 //: [Next](@next)
 

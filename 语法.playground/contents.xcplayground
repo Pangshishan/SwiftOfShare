@@ -9,5 +9,6 @@
         <page name='06-可选项'/>
         <page name='07-结构体'/>
         <page name='08-类'/>
+        <page name='09-闭包'/>
     </pages>
 </playground>

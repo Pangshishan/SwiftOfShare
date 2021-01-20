@@ -87,12 +87,34 @@ print("Hello, World!")
 
 
 //
-enum TestEnum {
-    case test(Int)
-}
-print(MemoryLayout<TestEnum>.size)
-print(MemoryLayout<TestEnum>.stride)
-print(MemoryLayout<TestEnum>.alignment)
+//enum TestEnum {
+//    case test(Int)
+//}
+//print(MemoryLayout<TestEnum>.size)
+//print(MemoryLayout<TestEnum>.stride)
+//print(MemoryLayout<TestEnum>.alignment)
+
+
+//
+//var s1 = "111"
+//var s2 = s1
+//s2.append("_222")
+//print(s1)
+//print(s2)
+
+//
+var dict1 = ["max": 10, "min": 0]
+var dict2 = dict1
+dict1["other"] = 7
+print(dict1)
+print(dict2)
+
+//
+//var arr1 = [1, 2, 3]
+//var arr2 = arr1
+//arr2.append(4)
+//print(arr1)
+//print(arr2)
 
 
 
