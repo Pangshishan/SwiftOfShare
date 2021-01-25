@@ -66,7 +66,7 @@ import Foundation
 
 
 // 数组排序
-var arr = [2, 3, 1, 5, 4]
+//var arr = [2, 3, 1, 5, 4]
 
 //arr.sort()
 
@@ -85,7 +85,7 @@ var arr = [2, 3, 1, 5, 4]
 
 //arr.sort(by: >)
 
-print(arr)
+//print(arr)
 
 // 忽略参数 用 _
 //exec_test { v1 v2 in
@@ -98,26 +98,68 @@ print(arr)
 
 
 /*
- 一个函数 和 它所捕获的变量\常量环境 结合起来，成为闭包。
+ 一个函数 和 它所捕获的变量\常量环境 结合起来，称为闭包。
  一般指定义在函数内部的函数
  一般它捕获的是外层函数的局部变量\常量
  */
 
-//typealias Fn = (Int) -> Int
-//
-//func getFn() -> Fn {
+typealias Fn = (Int) -> Int
+
+func getFn() -> Fn {
+    var num = 0
+    func plus(_ i: Int) -> Int {
+        num += i
+        return num
+    }
+    return plus;
+}
+var fn1 = getFn()
+var fn2 = getFn()
+
+print(fn1(1))
+print(fn1(2))
+print(fn1(3))
+print(fn1(4))
+
+print(fn2(5))
+print(fn2(6))
+
+print("memory: \(MemoryLayout.stride(ofValue: fn1))")
+
+/*
+ 可以把闭包想象成一个类的实例对象。
+ 内存在堆空间。
+ 捕获的局部变量/常量 就是对象的成员（储存属性）
+ 组成闭包的函数就是类内部定义的方法
+ */
+////  相当于
+//class Closure {
 //    var num = 0
 //    func plus(_ i: Int) -> Int {
-//        num += i
+//        num += 1
 //        return num
 //    }
-//    return plus;
 //}
-//var fn = getFn()
-//print(fn(1))
-//print(fn(2))
-//print(fn(3))
-//print(fn(4))
+//
+//func getFn() -> Closure {
+//    let num = 0
+//    let cs = Closure()
+//    cs.num = num;
+//    return cs
+//}
+//
+//var cs1 = getFn()
+//var cs2 = getFn()
+//cs1.plus(1)
+//cs1.plus(2)
+//cs1.plus(3)
+//cs1.plus(4)
+//
+//cs2.plus(5)
+//cs2.plus(6)
+
+
+
 
 
 //: [Next](@next)
