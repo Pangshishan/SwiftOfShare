@@ -1,6 +1,8 @@
 // 单行注释
 
-/*
+/// Playground 支持markup语法，类似markdown，在导航栏Editor下展示；
+
+/* 注释嵌套
  多行注释
  /*
  多行注释

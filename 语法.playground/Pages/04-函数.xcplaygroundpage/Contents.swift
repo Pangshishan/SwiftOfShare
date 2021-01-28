@@ -20,10 +20,12 @@
 //func sayHello2() {
 //    print("Hello")
 //}
-
+//func test() -> Int {
+//    0
+//}
 // 隐式返回: 如果整个函数体是一个单一表达式，那么函数会隐式返回这个表达式
 //func sum(v1: Int, v2: Int) -> Int {
-//    v1 + v2
+//    test()
 //}
 
 // 返回元组
@@ -65,24 +67,24 @@
 //    print(name + "\(age)" + job)
 //}
 //check(name: "李四", age: 20, job: "混子")
-//check(name: "李四", job: 20)
+//check(name: "李四", job: "none")
 //check(name: "李四")
 //check()
 
 // 可变参数, 一个函数只能有一个可变参数，紧跟可变参数后面的参数不能省略参数标签，省略了有歧义
-//func sum(_ numbers: Int...) -> Int {
+//func sum(_ numbers: Int...,a: Int) -> Int {
 //    var total = 0
 //    for number in numbers {
 //        total += number
 //    }
 //    return total;
 //}
-//sum(10, 20, 30, 40)
+//sum(10, 20, 30, 40, 50, a: 1)
 
 // 看下print
-//print(123, 456, 789)
-//print(123, 456, 789)
-//print(123, 456, 789, separator: " - ");
+print(123, 456, 789)
+print(123, 456, 789)
+print(123, 456, 789, separator: " - ");
 
 // 可以用inout 定义一个输入参数：可以在函数内部修改外部实参的值
 // inout参数不能有默认值
@@ -127,7 +129,7 @@
 // 返回值类型与函数重载无关
 //func sum(v1: Int, v2: Int) {
 //    v1 + v2
-//    print(111);
+//    print(111)
 //} // 与第一个不构成重载
 //sum(v1: 1, v2: 2)
 

@@ -9,8 +9,12 @@ import Foundation
 
 print("Hello, World!")
 
+for var i in 1...3 {
+    i += 5
+    print(i)
+}
+
 //func test() {
-//    print("hello")
 //    print("hello")
 //}
 //test()
@@ -18,12 +22,12 @@ print("Hello, World!")
 
 //class Person {
 //    func test() {
-//
+//        print("-- Person")
 //    }
 //}
 //class Doctor: Person {
 //    override func test() {
-//
+//        print("-- Doctor")
 //    }
 //}
 //
@@ -103,11 +107,11 @@ print("Hello, World!")
 //print(s2)
 
 //
-var dict1 = ["max": 10, "min": 0]
-var dict2 = dict1
-dict1["other"] = 7
-print(dict1)
-print(dict2)
+//var dict1 = ["max": 10, "min": 0]
+//var dict2 = dict1
+//dict1["other"] = 7
+//print(dict1)
+//print(dict2)
 
 //
 //var arr1 = [1, 2, 3]

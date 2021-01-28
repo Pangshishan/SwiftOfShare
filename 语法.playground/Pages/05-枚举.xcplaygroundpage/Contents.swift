@@ -47,6 +47,7 @@
 //case let .string(value):
 //    print(value)
 //}
+//print(date)
 
 /*
  举个例子，密码可分为数字密码 和 手势密码
@@ -90,6 +91,7 @@
 
 /*
  递归枚举  indirect前面加
+ 就是，把枚举当做它的关联值
  */
 //indirect enum ArithExpr { // 算数表达式
 //    case number(Int)
@@ -117,7 +119,9 @@
 //let five = ArithExpr.number(5)
 //let one = ArithExpr.number(1)
 //let sum = ArithExpr.sum(one, five)
+//let diff = ArithExpr.diff(five, one)
 //calculate(sum)
+//calculate(diff)
 
 /*
  MemoryLayout
