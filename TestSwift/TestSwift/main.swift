@@ -9,10 +9,12 @@ import Foundation
 
 print("Hello, World!")
 
-for var i in 1...3 {
-    i += 5
-    print(i)
-}
+//for var i in 1...3 {
+//    i += 5
+//    print(i)
+//}
+
+// MARK: - 内联函数
 
 //func test() {
 //    print("hello")
@@ -35,14 +37,14 @@ for var i in 1...3 {
 ////doc = Person()
 //doc.test()
 
-
+// MARK: - 闭包结构
 //var num1: Int? = nil
 //var num2: Int?? = num1
 //var num3: Int?? = nil
 //print(num2 == num3)
 
 
-// MARK: Enum 内存
+// MARK: - Enum 内存
 // 原始值 关联值
 //enum TestEnum {
 //    case test1, test2, test3
@@ -97,6 +99,37 @@ for var i in 1...3 {
 //print(MemoryLayout<TestEnum>.size)
 //print(MemoryLayout<TestEnum>.stride)
 //print(MemoryLayout<TestEnum>.alignment)
+
+
+// MARK: - 结构体
+//func testStruct() {
+//    struct Point {
+//        var x = 10
+//        var y = 20
+//    }
+//    var p = Point()
+//    print(MemoryLayout<Point>.size)
+//    print(MemoryLayout<Point>.stride)
+//    print(MemoryLayout<Point>.alignment)
+//    print(Mems.memStr(ofVal: &p))
+//}
+//testStruct()
+
+// MARK: - 类
+func testClassAndStruct() {
+    class Size {
+        var width = 0
+        var height = 0
+    }
+    struct Point {
+        var x = 0
+        var y = 0
+    }
+    var size = Size()
+//    var point = Point()
+    // alloc malloc
+}
+testClassAndStruct()
 
 
 //

@@ -2,6 +2,10 @@
 
 import Foundation
 
+/*
+ - 类的定义 和 结构体类似，但编译器不会为类自动生成可以传入成员值的初始化器。
+ - 如果成员都是有初始值的，会生成个无参数的初始化器。实际上，初始值也是在无参数的初始化器里赋值的。
+ */
 
 //class Point {
 //    var x: Int = 0
@@ -10,6 +14,12 @@ import Foundation
 //let p1 = Point()
 ////let p2 = Point(x: 1, y: 1)
 
+// 下面代码就会报错，对象创建出来，也必须保证都有初始值。
+//class Point {
+//    var x: Int
+//    var y: Int
+//}
+//let p1 = Point()
 
 
 /* 类 和 结构体的区别
@@ -20,9 +30,13 @@ import Foundation
 //    var w: Int = 0
 //    var h: Int = 0
 //}
-//var s   = Size()    // 16
-//var p   = Point()   // 栈8  堆32  前面8个类型信息，第二个8个放引用计数的 后面16个放俩Int
-//
+//func test() {
+//    var s   = Size()    // 16
+//    var p   = Point()   // 栈8  堆32  前面8个类型信息，第二个8个放引用计数的 后面16个放俩Int
+//}
+//test()
+
+
 //var s1 = s
 //s1.w = 10;
 //print(s.w)
