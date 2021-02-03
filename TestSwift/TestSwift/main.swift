@@ -118,16 +118,42 @@ print("Hello, World!")
 // MARK: - 类
 func testClassAndStruct() {
     class Size {
-        var width = 0
-        var height = 0
+        var width = 1
+        var height = 2
     }
     struct Point {
-        var x = 0
-        var y = 0
+        var x = 3
+        var y = 4
     }
-    var size = Size()
+
+//    // stride 不是获类型占多少内存，是获取创建出来的变量占多少内存
+//    print("MemoryLayout<Size>.stride", MemoryLayout<Size>.stride)
+//    print("MemoryLayout<Point>.stride", MemoryLayout<Point>.stride)
+//
+//
+//    var size = Size()
+//    print("size变量的地址", Mems.ptr(ofVal: &size))
+//    print("size变量的内存", Mems.memStr(ofVal: &size))
+//    print("size所指向内存的地址", Mems.ptr(ofRef: size))
+//    print("size所指向内存的内容", Mems.memStr(ofRef: size))
+//
+//    print(Mems.size(ofRef: size))
+//    print("--------------------")
+//
 //    var point = Point()
+//    print("point变量的地址", Mems.ptr(ofVal: &point))
+//    print("point变量的内存", Mems.memStr(ofVal: &point))
+    
+    
     // alloc malloc
+    
+    // Foundation框架下的方法，返回堆空间地址大小，非堆空间返回0
+    //malloc_size(<#T##ptr: UnsafeRawPointer!##UnsafeRawPointer!#>)
+    
+    var ptr = malloc(16)
+    print(malloc_size(ptr))
+    
+    // 在 Mac、iOS中，malloc函数分配的内存大小总是16的倍数
 }
 testClassAndStruct()
 
