@@ -126,7 +126,7 @@ func testClassAndStruct() {
         var y = 4
     }
 
-//    // stride 不是获类型占多少内存，是获取创建出来的变量占多少内存
+//    // stride 是获取创建出来的指针变量占多少内存
 //    print("MemoryLayout<Size>.stride", MemoryLayout<Size>.stride)
 //    print("MemoryLayout<Point>.stride", MemoryLayout<Point>.stride)
 //
@@ -150,10 +150,18 @@ func testClassAndStruct() {
     // Foundation框架下的方法，返回堆空间地址大小，非堆空间返回0
     //malloc_size(<#T##ptr: UnsafeRawPointer!##UnsafeRawPointer!#>)
     
-    var ptr = malloc(16)
-    print(malloc_size(ptr))
+//    var ptr = malloc(16)
+//    print(malloc_size(ptr))
     
     // 在 Mac、iOS中，malloc函数分配的内存大小总是16的倍数
+    
+//    print(unsafeBitCast(size, to: UInt.self))
+//    let size1 = Size()
+//    print(malloc_size(UnsafeRawPointer(bitPattern: unsafeBitCast(size1, to: UInt.self))!))
+    
+    /*
+     unsafeBitCast 是非常危险的操作，它会将一个指针指向的内存强制按位转换为目标的类型。因为这种转换是在 Swift 的类型管理之外进行的，因此编译器无法确保得到的类型是否确实正确，你必须明确地知道你在做什么
+     */
 }
 testClassAndStruct()
 
