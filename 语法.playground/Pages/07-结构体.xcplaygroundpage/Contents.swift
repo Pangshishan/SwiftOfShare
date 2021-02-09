@@ -28,7 +28,7 @@ import Foundation
 //var p1 = Point1(y: 0)
 //p1 = Point1(x: 0, y: 1)
 
-// 一下代码是否能编译通过呢
+// 以下代码是否能编译通过呢
 //struct Point {
 //    var x: Int?
 //    var y: Int?

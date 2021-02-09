@@ -80,7 +80,7 @@ import Foundation
 //}
 //var p1 = Point(x: 10, y: 10)
 //p1 = Point(x: 20, y: 20) // 覆盖原来的内存
-
+//
 //class Size {
 //    var width: Int
 //    var height: Int
@@ -89,10 +89,27 @@ import Foundation
 //        self.height = height
 //    }
 //}
+//func test() {
+//    var s1 = Size(width: 10, height: 10)
+//    var s2 = s1
+//}
+//test()
+
 //var s1 = Size(width: 10, height: 10)
 //s1 = Size(width: 10, height: 10) // 创建新对象
-
+//
+//
+//func changeV(point: Point, size: Size) {
+////    point.x = 100
+////    point.y = 100
+//    size.width = 200
+//    size.height = 200
+//}
+//changeV(point: p1, size: s1)
+//print(p1, " ", s1.width, s1.height)
 // 引用类型的赋值，同OC
+
+
 
 // 值类型、引用类型的 let
 //struct Point {
@@ -129,11 +146,15 @@ struct Person {
         case man = "man"
         case woman
     }
+    func test() {
+        
+    }
 }
 print(Person.Gender.man.rawValue)
 
 var gender = Person.Gender.man
-gender = .woman
+gender = .woman // 已经确定类型，就可以直接 点了
+
 
 // 定义在枚举、结构体、类里面叫方法，外面叫函数，方法的本质也是函数
 

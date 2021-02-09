@@ -92,8 +92,8 @@ import Foundation
 //    return 10
 //}
 
-// (Int, Int) -> Int
-//var fn: = {$0 + $1}
+// (Int, Int) -> Int // 要让编译器可以推断类型
+//var fn = {$0 + $1}
 //fn(1, 2)
 
 
@@ -103,28 +103,28 @@ import Foundation
  一般它捕获的是外层函数的局部变量\常量
  */
 
-typealias Fn = (Int) -> Int
+//typealias Fn = (Int) -> Int
 
-func getFn() -> Fn {
-    var num = 0
-    func plus(_ i: Int) -> Int {
-        num += i
-        return num
-    }
-    return plus;
-}
-var fn1 = getFn()
-var fn2 = getFn()
-
-print(fn1(1))
-print(fn1(2))
-print(fn1(3))
-print(fn1(4))
-
-print(fn2(5))
-print(fn2(6))
-
-print("memory: \(MemoryLayout.stride(ofValue: fn1))")
+//func getFn() -> Fn {
+//    var num = 0
+//    func plus(_ i: Int) -> Int {
+//        num += i
+//        return num
+//    }
+//    return plus;
+//}
+//var fn1 = getFn()
+//var fn2 = getFn()
+//
+//print(fn1(1))
+//print(fn1(2))
+//print(fn1(3))
+//print(fn1(4))
+//
+//print(fn2(5))
+//print(fn2(6))
+//
+//print("memory: \(MemoryLayout.stride(ofValue: fn1))")
 
 /*
  可以把闭包想象成一个类的实例对象。
