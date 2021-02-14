@@ -11,5 +11,6 @@
         <page name='08-类'/>
         <page name='09-闭包'/>
         <page name='10-继承'/>
+        <page name='11-初始化'/>
     </pages>
 </playground>
