@@ -120,3 +120,106 @@ import Foundation
  
  */
 
+// MARK: required
+/*
+ 用required修饰指定初始化器，表明其所有子类都必须实现该初始化器(通过继承或者重写实现)
+ 如果子类重写了required初始化器，也必须加上required，不用加override
+ */
+//class Person {
+//    required init() { }
+//    init(age: Int) { }
+//}
+//class Student : Person {
+//    required init() {
+//        super.init()
+//    }
+//}
+
+// MARK: 属性观察器
+
+/*
+ 父类的属性在它自己的初始化器中赋值不会触发属性观察器，但在子类的初始化器中赋值会触发属性观察器
+ */
+
+//class Person {
+//    var age: Int {
+//        willSet {
+//            print("willSet", newValue)
+//        }
+//        didSet {
+//            print("didSet", oldValue, age)
+//        }
+//    }
+//    init() {
+//        self.age = 0
+//
+//    }
+//}
+//class Student : Person {
+//    override init() {
+//        super.init()
+//        self.age = 1 }
+//}
+//// willSet 1
+//// didSet 0 1
+//var stu = Student()
+
+
+// MARK: 可失败初始化器
+
+/*
+ 
+ 类、结构体、枚举都可以使用init?定义可失败初始化器
+
+ 不允许同时定义参数标签、参数个数、参数类型相同的可失败初始化器和非可失败初始化器
+ 
+ 可以用init!定义隐式解包的可失败初始化器
+ 
+ 可失败初始化器可以调用非可失败初始化器，非可失败初始化器调用可失败初始化器需要进行解包
+ 
+ 如果初始化器调用一个可失败初始化器导致初始化失败，那么整个初始化过程都失败，并且之后的代码都停止执行
+ 可以用一个非可失败初始化器重写一个可失败初始化器，但反过来是不行的
+
+ 
+ */
+
+//class Person {
+//    var name: String
+//    init?(name: String) {
+//        if name.isEmpty  {
+//            return nil
+//        }
+//        self.name = name
+//    }
+//}
+//
+//// 之前接触过的可失败初始化器
+//var num = Int("123")
+//// public init?(_ description: String)
+//
+//enum Answer : Int {
+//    case wrong, right
+//}
+//var an = Answer(rawValue: 1)
+
+
+
+// MARK: 反初始化器(deinit)
+
+/*
+ deinit叫做反初始化器，类似于C++的析构函数、OC中的dealloc方法
+ 当类的实例对象被释放内存时，就会调用实例对象的deinit方法
+ 
+ deinit不接受任何参数，不能写小括号，不能自行调用
+ 父类的deinit能被子类继承
+ 
+ 子类的deinit实现执行完毕后会调用父类的deinit
+ 
+ */
+
+//class Person {
+//    deinit {
+//        print("Person对象销毁了")
+//
+//    }
+//}

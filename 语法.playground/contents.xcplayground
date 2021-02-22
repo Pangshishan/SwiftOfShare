@@ -12,5 +12,9 @@
         <page name='09-闭包'/>
         <page name='10-继承'/>
         <page name='11-初始化'/>
+        <page name='12-可选链'/>
+        <page name='13-协议'/>
+        <page name='14-错误处理'/>
+        <page name='15-泛型'/>
     </pages>
 </playground>
