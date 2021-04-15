@@ -260,7 +260,7 @@ import Foundation
  
  fn1 和 fn2 前8字节一样，但后8字节不一样。因为他们调用的都是plus，后面的堆空间分配的不一样。
  
- 在getFn返回时，plus才捕获num，如果返回的不是plus，则不会捕获，也不会申请堆空间内存。
+ 在getFn返回之前，plus才捕获num，如果返回的不是plus，则不会捕获，也不会申请堆空间内存。
  
  如果num是全局变量，不会捕获num了，不会申请堆空间内存了。申请堆空间是为了避免num是局部变量时被释放掉。
  
@@ -682,7 +682,82 @@ import Foundation
 // MARK:- 继承
 // 查看 语法.playground
 
-  
+
+
+// MARK:- ---------------- 闭包 ----------------
+
+/// 1. 
+//func sum(_ v1: Int, _ v2: Int) -> Int {
+//    v1 + v2
+//}
+//var fn = sum
+//print(MemoryLayout.stride(ofValue: fn))
+
+/// 2. 查看捕获 与 未捕获 num
+//typealias Fn = (Int) -> Int
+//
+//func getFn() -> Fn {
+//    // 局部变量
+//    var num = 10
+//    func plus(_ i: Int) -> Int {
+//        num += i
+//        return num
+//    }
+//    return plus
+//}
+//var fn1 = getFn()
+//fn1(1) // call rax
+//print(fn1(1))
+//print(fn1(2))
+//print(fn1(3))
+
+// rax plus
+// rdx 堆空间地址
+
+//var fn2 = getFn()
+//fn2(2)
+
+/// 3. 验证 不返回plus时，不会捕获num的值。捕获是发生在闭包对象创建时
+//typealias Fn = (Int) -> Int
+//
+//func getFn() -> Fn {
+//    // 局部变量
+//    var num = 10
+//    func plus(_ i: Int) -> Int {
+//        num += i
+//        return num
+//    }
+//    //num = 14
+////    return plus
+////    let fn1: Fn = plus
+////    _ = fn1(1)
+//    return { $0 }
+//}
+//var fn1 = getFn()
+//fn1(1)
+
+/// 4.捕获多个变量时
+//typealias Fn = (Int) -> Int
+//
+//func getFn() -> Fn {
+//    // 局部变量
+//    var num1 = 10
+//    var num2 = 11
+//    func plus(_ i: Int) -> Int {
+//        num1 += i
+//        num2 += i
+//        return num1 + num2
+//    }
+//    return plus
+//}
+//var fn1 = getFn()
+//fn1(1)
+
+// 0x100008738
+// 0x100008740
+
+
+
  
 
 
