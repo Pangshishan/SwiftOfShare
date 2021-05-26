@@ -308,7 +308,7 @@ import Foundation
 //}
 
 
-// MARK: 隐藏闭包
+//   
 //func getNumber() -> Int {
 //    let a = 10
 //    let b = 20
